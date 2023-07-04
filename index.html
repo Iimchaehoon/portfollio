@@ -81,7 +81,7 @@
           <li>
             <i class="fa-solid fa-server"></i>
             <p>Back-end</p>
-            <p>Java,JavaScript,NodeJs</p>
+            <p>Java,JavaScript,Node.Js</p>
           </li>
         </ul>
         <ul>
@@ -294,9 +294,37 @@
         </ul>
       </section>
       <!-- Arrow up -->
-      <aside></aside>
+      <aside>
+        <!-- a태그안에 아무런 텍스트가 없는 상황 => 스크린 리더기가 읽을 수 없음 -->
+        <!-- 웹 접근성을 위해 title속성에 a태그 설명추가 => 의미전달-->
+        <a href="#home" title="back to top">
+          <i class="fa-solid fa-arrow-up"></i>
+        </a>
+      </aside>
     </main>
     <!-- footer -->
-    <footer id="contact"></footer>
+    <footer id="contact">
+      <h2>Let &#39;s talk</h2>
+      <p>ch05108@naver.com</p>
+      <ul>
+        <li>
+          <a
+            href="https://github.com/Iimchaehoon"
+            title="chaehoon&#39;s github"
+            target="_blank"
+          >
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a
+            href="mailto:ch05108@naver.com"
+            title="chaehoon&#39;s mailto"
+            target="_blank"
+          >
+            <i class="fa-solid fa-envelope-circle-check"></i>
+          </a>
+        </li>
+      </ul>
+      <p>ⓒLimChaeHoon - All rights reserved</p>
+    </footer>
   </body>
 </html>
