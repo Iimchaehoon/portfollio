@@ -1,3 +1,5 @@
+"use strict";
+
 // document객체의 querySelector()함수 사용하여 해당 클래스에 접근(class,id,tag전부 중 제일 첫요소)
 const header = document.querySelector(".header");
 
