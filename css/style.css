@@ -28,6 +28,10 @@
 * {
   box-sizing: border-box;
 }
+html {
+  /* 부드럽게 스크롤링 */
+  scroll-behavior: smooth;
+}
 body {
   font-family: "Open Sans", "sans-serif";
   /* 브라우저 이슈가 생겨서 폰트가 적용되지 않는 경우  sans-serif사용 */
