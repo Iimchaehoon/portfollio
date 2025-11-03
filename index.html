@@ -107,6 +107,12 @@
     .lightbox .nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(15,23,40,.7);border:1px solid #2b3550;border-radius:12px;padding:.5rem .7rem;cursor:pointer;user-select:none}
     .lightbox .nav.prev{left:-56px}.lightbox .nav.next{right:-56px}
     .skill img{width:28px;height:28px;object-fit:contain;background:transparent}
+
+    /* ✅ 라이트박스 아이콘 가독성 */
+    .lightbox .close, .lightbox .nav { color:#fff; }
+
+    /* ✅ EDUO(=kmooc 캐러셀) 캡션만 검은색으로 */
+    .carousel[data-carousel="kmooc"] .caption { color:#000; text-shadow:none; }
   </style>
 
   <style>
@@ -152,7 +158,8 @@
 
   <header id="top" class="container hero">
     <div>
-      <div class="kicker"><span class="badge">1998.07.17 출생</span></div>
+      <!-- ✅ 출생 문구 제거 -->
+      <div class="kicker"><span class="badge">1998.07.17</span></div>
       <h1 class="title"><span id="typed"></span><span class="caret">▌</span></h1>
       <p class="subtitle">효율을 높이는 기획자입니다.</p>
       <div class="cta">
@@ -181,7 +188,7 @@
 
   <section id="about" class="container reveal">
     <h2>소개</h2>
-    <p class="lead">안녕하세요! 저는 개발을 이해하고 디자이너와 자연스럽게 소통하는 기획자입니다. 필요한 기능을 빠르게 실험하고, 데이터와 피드백으로 개선하는 일을 좋아합니다.</p>
+    <p class="lead">안녕하세요! 저는 개발자와 디자이너의 언어를 이해할 수 있는 기획자입니다. 필요한 기능을 빠르게 실험하고, 데이터와 피드백으로 개선하는 일을 좋아합니다.</p>
     <div class="chips"><span class="chip">프로토타입 우선</span><span class="chip">실행 중심</span><span class="chip">개발·디자인 커뮤니케이션</span></div>
     <div class="accordion">
       <div class="acc-item on">
@@ -190,7 +197,13 @@
       </div>
       <div class="acc-item">
         <div class="acc-head"><b>협업 스타일</b><span class="chev">▼</span></div>
-        <div class="acc-body"><ul class="list"><li>개발/디자인 용어를 서로의 언어로 번역</li><li>이슈를 빠르게 요약하고 선택지 제시</li></ul></div>
+        <div class="acc-body">
+          <ul class="list">
+            <!-- ✅ 문장 단순·명확화 -->
+            <li>개발자와 디자이너를 모두 경험하여 서비스를 조율하고 원활하게 커뮤니케이션합니다.</li>
+            <li>이슈를 빠르게 요약하고 선택지를 제시합니다.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -238,6 +251,7 @@
   <section id="projects" class="container reveal">
     <h2>프로젝트</h2>
 
+    <!-- 1: 북클리 -->
     <article class="project card">
       <div class="copy">
         <div class="meta"><span class="tag">팀 5명 · 1개월</span> <span class="tag">서비스 기획 · IA/Flow · 기능정의 · 와이어프레임 · UI · 프로토타입 · 테스트</span></div>
@@ -249,7 +263,6 @@
           <li>기대효과: 또래 상호작용과 긍정 피드백</li>
         </ul>
         <div class="cta">
-          <!-- ✅ 경로 수정: 현재 폴더 기준 -->
           <a class="btn soft" target="_blank" rel="noopener" href="./portfile/독서앱기획.pdf">📄 북클리 기획서(PDF)</a>
         </div>
       </div>
@@ -269,6 +282,7 @@
       </div>
     </article>
 
+    <!-- 2: EDUO -->
     <article class="project card" style="margin-top:1rem">
       <div class="copy">
         <div class="meta"><span class="tag">팀 3명 · 1개월</span> <span class="tag">UI/UX 분석 · 서비스 개선 제안 · 기획서 · 페르소나 · 개발 · 배포</span></div>
@@ -276,7 +290,6 @@
         <p>K-MOOC의 학습 지원 한계를 분석하고 개인화 추천과 학습 코치로 완주율 향상을 목표로 리뉴얼했습니다.</p>
         <div class="cta">
           <a class="btn primary" target="_blank" rel="noopener" href="https://keepgoim.vercel.app/">리뉴얼 Web서비스 보기</a>
-          <!-- ✅ 경로 수정: 현재 폴더 기준 -->
           <a class="btn soft" target="_blank" rel="noopener" href="./portfile/kmooc웹서비스리뉴얼.pdf">📄 EDUO 기획서(PDF)</a>
         </div>
       </div>
@@ -294,6 +307,47 @@
         </div>
       </div>
     </article>
+
+    <!-- 3: 지니봇 (AI 강조 + 기획 역할 추가) -->
+    <article class="project card" style="margin-top:1rem">
+      <div class="copy">
+        <div class="meta">
+          <span class="tag">팀 4명</span>
+          <!-- ✅ 역할에 기획 추가 -->
+          <span class="tag">프론트엔드 · 백엔드 · 기획</span>
+          <span class="tag">ChatGPT API · JSON DB · 자동화</span>
+        </div>
+        <h3 style="margin:.5rem 0">지니봇 — 센터 업무를 돕는 AI 챗봇</h3>
+        <p>
+          <b>ChatGPT API</b>로 질문 의도를 파악하고, 직접 구축한 <b>JSON DB</b>에서
+          키워드·규칙 기반으로 가장 적합한 답변을 찾아 응답하는 <b>AI 보조 시스템</b>을 구현했습니다.
+          저는 <b>프론트엔드(UI/라이트박스), 백엔드(FastAPI·데이터 매칭)</b>와 함께
+          <b>기획(IA·기능정의서·프로토타입·WBS)</b>을 담당했습니다.
+        </p>
+        <ul class="list">
+          <li><b>프롬프트 엔지니어링</b>으로 의도 분류 → JSON DB 검색 → 응답 생성 파이프라인</li>
+          <li>FAQ·업무서식 <b>자동 작성</b> 흐름(예: 휴가신청서)으로 반복 업무 절감</li>
+          <li>검색 결과에 <b>직접 링크/페이지 바로가기</b> 제공, 실제 업무 적용성 강화</li>
+        </ul>
+        <div class="cta">
+          <a class="btn soft" target="_blank" rel="noopener" href="./portfile/chatbot.pdf">📄 챗봇 기획/개발 PDF</a>
+        </div>
+      </div>
+
+      <div class="thumb">
+        <div class="carousel" data-carousel="geniebot">
+          <div class="track">
+            <img src="images/솔루션 (주영).png" alt="지니봇 솔루션 개요" data-caption="솔루션 개요 · AI 파이프라인"/>
+            <img src="images/솔루션2.png" alt="키워드 매칭/검색" data-caption="의도 분류 → JSON DB 매칭"/>
+            <img src="images/솔루션3.png" alt="Q&A와 문서 자동화" data-caption="Q&A · 문서 자동 작성"/>
+          </div>
+          <div class="caption" aria-live="polite"></div>
+          <button class="ctrl prev" aria-label="이전">◂</button>
+          <button class="ctrl next" aria-label="다음">▸</button>
+          <div class="dots" aria-hidden="true"></div>
+        </div>
+      </div>
+    </article>
   </section>
 
   <section id="growth" class="container reveal">
@@ -301,7 +355,7 @@
     <div class="timeline">
       <div class="row"><time>어릴 적 ~ 대학</time><div>새로운 것을 배우고 직접 써보는 성향으로 IT에 관심을 갖고 전공으로 역량을 쌓았습니다.</div></div>
       <div class="row"><time>팀프로젝트 경험</time><div>프론트엔드 역할을 맡으며 사용자 관점에서 기획에 몰입했습니다.</div></div>
-      <div class="row"><time>실무 & 부트캠프</time><div>웹퍼블리싱, PM 부트캠프 수료 등 전 단계를 경험하며 ‘개발을 아는 기획자’의 강점을 확립했습니다.</div></div>
+      <div class="row"><time>실무 & 부트캠프</time><div>천재교육 에듀테크 PM부트캠프에서 기획,UI/UX디자인,개발 단계를 경험하며 ‘개발을 아는 기획자’의 강점을 확립했습니다.</div></div>
     </div>
   </section>
 
@@ -360,7 +414,7 @@
     const root=document.documentElement;
     function applyTheme(name){ root.setAttribute('data-theme',name); document.body.setAttribute('data-theme',name); localStorage.setItem('portfolio.theme',name); }
 
-    const i18n={ ko:{ headerLines:['안녕하세요, 임채훈입니다.','개발을 이해하고 디자이너와 커뮤니케이션할 수 있는 기획자입니다.'], subtitle:'효율을 높이는 기획자입니다.' },
+    const i18n={ ko:{ headerLines:['안녕하세요, 임채훈입니다.','개발을 이해하고 디자이너와 커뮤니케이션할 수 있는 기획자입니다.'], subtitle:'소통을 중시하는 기획자입니다.' },
                  en:{ headerLines:["Hi, I'm Lim Chaehoon.",'A planner who understands engineering and communicates with designers.'], subtitle:'I am a planner who increases team efficiency.' } };
     function applyLang(lang){
       const dict=i18n[lang]||i18n.ko; startTyping(dict.headerLines);
