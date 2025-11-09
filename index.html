@@ -256,7 +256,11 @@
     <!-- 1: 북클리 -->
     <article class="project card">
       <div class="copy">
-        <div class="meta"><span class="tag">팀 5명 · 1개월</span> <span class="tag">서비스 기획 · IA/Flow · 기능정의 · 와이어프레임 · UI · 프로토타입 · 테스트</span></div>
+        <div class="meta">
+          <span class="tag">팀 5명 · 1개월</span>
+          <span class="tag">기여도 30%</span>
+          <span class="tag">서비스 기획 · IA/Flow · 기능정의 · 와이어프레임 · UI · 프로토타입 · 테스트</span>
+        </div>
         <h3 style="margin:.5rem 0">북클리(Bookly) — 함께 읽는 즐거움: AI 추천 · 독서 미러링 · 독서 골든벨</h3>
         <p>초등 고학년의 문해력 위기를 ‘함께 읽기’ 경험으로 해결하기 위한 소셜 독서 앱을 기획했습니다.</p>
         <ul class="list">
@@ -287,7 +291,11 @@
     <!-- 2: EDUO -->
     <article class="project card" style="margin-top:1rem">
       <div class="copy">
-        <div class="meta"><span class="tag">팀 3명 · 1개월</span> <span class="tag">UI/UX 분석 · 서비스 개선 제안 · 기획서 · 페르소나 · 개발 · 배포</span></div>
+        <div class="meta">
+          <span class="tag">팀 3명 · 1개월</span>
+          <span class="tag">기여도 45%</span>
+          <span class="tag">UI/UX 분석 · 서비스 개선 제안 · 기획서 · 페르소나 · 개발 · 배포</span>
+        </div>
         <h3 style="margin:.5rem 0">EDUO — K-MOOC 리뉴얼: AI 기반 개인화 학습 경험</h3>
         <p>K-MOOC의 학습 지원 한계를 분석하고 개인화 추천과 학습 코치로 완주율 향상을 목표로 리뉴얼했습니다.</p>
         <div class="cta">
@@ -315,6 +323,7 @@
       <div class="copy">
         <div class="meta">
           <span class="tag">팀 4명</span>
+          <span class="tag">기여도 25%</span>
           <span class="tag">프론트엔드 · 백엔드 · 기획</span>
           <span class="tag">ChatGPT API · JSON DB · 자동화</span>
         </div>
@@ -375,7 +384,7 @@
         <ul class="list"><li>실행력이 강하고 MVP를 빠르게 구현합니다.</li><li>기획과 개발을 모두 경험해 양쪽 입장을 이해합니다.</li><li>대안을 준비해 의사결정을 돕습니다.</li></ul>
       </div>
       <div class="card"><h3>보완점</h3>
-        <ul class="list"><li>혼자 떠안는 경향을 인지하고 역할 분담·전문성 존중을 실천 중입니다.</li></ul>
+        <ul class="list"><li>프로젝트에 욕심이 많아 혼자 떠안는 경향을 인지하고 역할 분담·전문성 존중을 실천하여 효율적으로 작업하려고 합니다.</li></ul>
       </div>
     </div>
   </section>
@@ -474,7 +483,7 @@
     function openLightbox(list,index){ lbList=list; lbIndex=index; lb.classList.add('open'); renderLB(); }
     function closeLightbox(){ lb.classList.remove('open'); lbImg.src=''; lbCap.textContent=''; lbList=[]; lbIndex=0; }
     lbPrev.addEventListener('click',()=>{ if(!lbList.length)return; lbIndex=(lbIndex-1+lbList.length)%lbList.length; renderLB(); });
-    lbNext.addEventListener('click',()=>{ if(!lbList.length)return; lbIndex=(lbIndex+1)%lbList.length; renderLB(); });
+    lbNext.addEventListener('click',()=>{ lbIndex=(lbIndex+1)%lbList.length; renderLB(); });
     lb.addEventListener('click',(e)=>{ if(e.target===lb) closeLightbox(); });
     lb.querySelector('.close').addEventListener('click',closeLightbox);
     window.addEventListener('keydown',(e)=>{ if(!lb.classList.contains('open'))return;
