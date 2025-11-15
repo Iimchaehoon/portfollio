@@ -59,12 +59,100 @@
     .card h3{margin:.25rem 0 .75rem}
     .meta{display:flex;gap:.6rem;flex-wrap:wrap;color:#9ab0db;font-size:.9rem}
 
-    /* skills */
-    .skills{display:grid;grid-template-columns:repeat(6,1fr);gap:.8rem}
-    @media (max-width:980px){.skills{grid-template-columns:repeat(3,1fr)}}
-    @media (max-width:560px){.skills{grid-template-columns:repeat(2,1fr)}}
+    /* skills - 카테고리 카드형 그리드 */
+    .skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:1.2rem}
+    @media (max-width:980px){.skills{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media (max-width:560px){.skills{grid-template-columns:1fr}}
+    .skill-category h3{margin:0 0 .6rem;font-size:1rem;color:#d4e2ff}
+    .skills-inner{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}
+    @media (max-width:560px){.skills-inner{grid-template-columns:1fr}}
     .skill{display:flex;align-items:center;gap:.75rem;padding:.8rem;border:1px solid var(--line);background:#0f1728;border-radius:14px}
     .skill b{font-weight:700}
+
+    /* 직무 역량 카드 섹션 */
+    .role-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem;margin-top:1.4rem}
+    @media (max-width:860px){.role-grid{grid-template-columns:1fr}}
+    .role-card{
+      position:relative;
+      overflow:hidden;
+      background:radial-gradient(circle at top left, rgba(110,168,255,.18), transparent 55%), linear-gradient(180deg,#0f1726,#0b101e);
+      border:1px solid #1f2940;
+      border-radius:20px;
+      padding:1.3rem 1.4rem 1.4rem;
+      box-shadow:0 18px 40px rgba(3,7,18,.55);
+      opacity:0;
+      transform:translateY(10px);
+      transition:opacity .55s ease, transform .55s ease, box-shadow .35s ease, border-color .35s ease, background .35s ease;
+    }
+    .reveal.on .role-card{opacity:1;transform:none}
+    .role-card:hover{
+      transform:translateY(-4px);
+      border-color:rgba(125,177,255,.9);
+      box-shadow:0 26px 55px rgba(15,23,42,.9);
+      background:radial-gradient(circle at top left, rgba(138,92,255,.24), transparent 60%), linear-gradient(180deg,#0f1728,#090f1c);
+    }
+    .role-card::before{
+      content:"";
+      position:absolute;
+      inset:-20%;
+      background:radial-gradient(circle at 0 0,rgba(110,168,255,.14),transparent 55%);
+      opacity:0;
+      transform:translate3d(-10px,-10px,0);
+      transition:opacity .35s ease, transform .35s ease;
+      pointer-events:none;
+    }
+    .role-card:hover::before{
+      opacity:1;
+      transform:translate3d(0,0,0);
+    }
+    .role-card-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:.75rem;
+      margin-bottom:.35rem;
+    }
+    .role-card-top h3{
+      margin:0;
+      font-size:1.05rem;
+      letter-spacing:-.01em;
+    }
+    .role-badge{
+      padding:.25rem .6rem;
+      border-radius:999px;
+      border:1px solid rgba(148,163,199,.5);
+      font-size:.8rem;
+      color:#e2edff;
+      background:rgba(15,23,42,.9);
+      white-space:nowrap;
+    }
+    .role-meter{
+      position:relative;
+      height:6px;
+      border-radius:999px;
+      background:rgba(148,163,199,.18);
+      overflow:hidden;
+      margin:.5rem 0 1rem;
+    }
+    .role-meter-fill{
+      position:absolute;
+      inset:0;
+      width:0;
+      background:linear-gradient(90deg,var(--brand),var(--brand-2));
+      box-shadow:0 0 12px rgba(110,168,255,.75);
+      transition:width .9s cubic-bezier(.22,.61,.36,1);
+    }
+    .reveal.on .role-card .role-meter-fill{
+      width:calc(var(--pct,0)*1%);
+    }
+    .role-card p{
+      position:relative;
+      margin:0;
+      color:#d3e2ff;
+      font-size:.95rem;
+      line-height:1.6;
+      z-index:1;
+    }
 
     /* timeline & project */
     .timeline{display:grid;gap:1rem}
@@ -151,6 +239,7 @@
         <a href="#strengths" data-i18n="nav.strengths">핵심역량</a>
         <a href="#projects" data-i18n="nav.projects">프로젝트</a>
         <a href="#growth" data-i18n="nav.growth">성장과정</a>
+        <a href="#capability" data-i18n="nav.capability">직무 역량</a>
         <a href="#contact" data-i18n="nav.contact">연락처</a>
       </div>
     </div>
@@ -210,22 +299,77 @@
     <h2>보유 기술 및 도구</h2>
     <p class="lead">HTML · CSS · JavaScript · React(경험) · Notion · Figma · GitHub · ChatGPT · VSCode · <b>AWS</b> · <b>Google Workspace</b> · <b>MySQL</b> · <b>Slack</b></p>
     <div class="skills" aria-label="skills icons grid">
-      <div class="skill"><img src="images/html.png" alt="HTML"/><b>HTML</b></div>
-      <div class="skill"><img src="images/css.png" alt="CSS"/><b>CSS</b></div>
-      <div class="skill"><img src="images/js.png" alt="JavaScript"/><b>JavaScript</b></div>
-      <div class="skill"><img src="images/react.png" alt="React"/><b>React</b></div>
-      <div class="skill"><img src="images/figma.png" alt="Figma"/><b>Figma</b></div>
-      <div class="skill"><img src="images/vscode.png" alt="VSCode"/><b>VSCode</b></div>
-      <div class="skill"><img src="images/github.png" alt="GitHub"/><b>GitHub</b></div>
-      <div class="skill"><img src="images/notion.png" alt="Notion"/><b>Notion</b></div>
-      <div class="skill"><img src="images/chatgpt.png" alt="ChatGPT"/><b>ChatGPT</b></div>
-      <div class="skill"><img src="images/cursor.png" alt="Cursor"/><b>Cursor</b></div>
-      <div class="skill"><img src="images/claude.png" alt="Claude"/><b>Claude</b></div>
-      <div class="skill"><img src="images/android.png" alt="Android Studio"/><b>Android Studio</b></div>
-      <div class="skill"><img src="images/aws.png" alt="AWS"/><b>AWS</b></div>
-      <div class="skill"><img src="images/gowork.png" alt="Google Workspace"/><b>Google Workspace</b></div>
-      <div class="skill"><img src="images/mysql.png" alt="MySQL"/><b>MySQL</b></div>
-      <div class="skill"><img src="images/slack1.png" alt="Slack"/><b>Slack</b></div>
+      <!-- Cooperation -->
+      <div class="card skill-category">
+        <h3>Cooperation</h3>
+        <div class="skills-inner">
+          <div class="skill"><img src="images/gowork.png" alt="Google Workspace"/><b>Google Workspace</b></div>
+          <div class="skill"><img src="images/slack1.png" alt="Slack"/><b>Slack</b></div>
+          <div class="skill"><img src="images/notion.png" alt="Notion"/><b>Notion</b></div>
+        </div>
+      </div>
+
+      <!-- Design -->
+      <div class="card skill-category">
+        <h3>Design</h3>
+        <div class="skills-inner">
+          <div class="skill"><img src="images/figma.png" alt="Figma"/><b>Figma</b></div>
+        </div>
+      </div>
+
+      <!-- Web -->
+      <div class="card skill-category">
+        <h3>Web</h3>
+        <div class="skills-inner">
+          <div class="skill"><img src="images/html.png" alt="HTML"/><b>HTML</b></div>
+          <div class="skill"><img src="images/css.png" alt="CSS"/><b>CSS</b></div>
+          <div class="skill"><img src="images/js.png" alt="JavaScript"/><b>JavaScript</b></div>
+          <div class="skill"><img src="images/react.png" alt="React"/><b>React</b></div>
+        </div>
+      </div>
+
+      <!-- Database -->
+      <div class="card skill-category">
+        <h3>Database</h3>
+        <div class="skills-inner">
+          <div class="skill"><img src="images/mysql.png" alt="MySQL"/><b>MySQL</b></div>
+        </div>
+      </div>
+
+      <!-- Git -->
+      <div class="card skill-category">
+        <h3>Git</h3>
+        <div class="skills-inner">
+          <div class="skill"><img src="images/github.png" alt="GitHub"/><b>GitHub</b></div>
+        </div>
+      </div>
+
+      <!-- AI Tools -->
+      <div class="card skill-category">
+        <h3>AI Tools</h3>
+        <div class="skills-inner">
+          <div class="skill"><img src="images/chatgpt.png" alt="ChatGPT"/><b>ChatGPT</b></div>
+          <div class="skill"><img src="images/claude.png" alt="Claude"/><b>Claude</b></div>
+          <div class="skill"><img src="images/cursor.png" alt="Cursor"/><b>Cursor</b></div>
+        </div>
+      </div>
+
+      <!-- Cloud -->
+      <div class="card skill-category">
+        <h3>Cloud</h3>
+        <div class="skills-inner">
+          <div class="skill"><img src="images/aws.png" alt="AWS"/><b>AWS</b></div>
+        </div>
+      </div>
+
+      <!-- Develope Tools -->
+      <div class="card skill-category">
+        <h3>Develope Tools</h3>
+        <div class="skills-inner">
+          <div class="skill"><img src="images/vscode.png" alt="VSCode"/><b>VSCode</b></div>
+          <div class="skill"><img src="images/android.png" alt="Android Studio"/><b>Android Studio</b></div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -247,6 +391,69 @@
       <div class="card"><h3>커뮤니케이션</h3><p>기획·디자인·개발 간 언어를 번역하듯 조율합니다. 이슈를 빠르게 이해하고 해결책을 제시합니다.</p></div>
       <div class="card"><h3>실행력</h3><p>MVP·프로토타입으로 빠르게 검증하고 결과물로 소통합니다.</p></div>
       <div class="card"><h3>개발 이해도</h3><p>HTML/CSS/JS·React 경험과 Git 협업으로 현실적인 범위를 제시합니다.</p></div>
+    </div>
+  </section>
+
+  <!-- 새 직무 역량 섹션 (핵심역량과 프로젝트 사이) -->
+  <section id="capability" class="container reveal">
+    <h2>직무 역량</h2>
+    <div class="role-grid">
+      <div class="role-card">
+        <div class="role-card-top">
+          <h3>문서 작성 능력</h3>
+          <span class="role-badge">85%</span>
+        </div>
+        <div class="role-meter"><div class="role-meter-fill" style="--pct:85;"></div></div>
+        <p>
+          Notion과 Google Workspace를 활용해 기획서, IA, 플로우차트, 기능 정의서, 회의록 등을 체계적으로 정리해 온 경험이 풍부합니다.
+          PM 13기와 여러 팀 프로젝트에서 기획 문서, WBS, 리서치 정리를 주도하며 문서를 기준으로 팀의 합의를 이끌었어서
+          의사결정을 정리하는 역할에 익숙합니다.
+        </p>
+      </div>
+
+      <div class="role-card">
+        <div class="role-card-top">
+          <h3>프로그래밍 이해도/프론트엔드</h3>
+          <span class="role-badge">75%</span>
+        </div>
+        <div class="role-meter"><div class="role-meter-fill" style="--pct:75;"></div></div>
+        <p>
+          HTML, CSS, JavaScript, React(경험)를 바탕으로 화면 설계, 컴포넌트 구조 설계, 간단한 MVP 구현이 가능합니다.
+          지니봇, EDUO, Bookly 프로젝트에서 프론트엔드와 일부 백엔드(Chat GPT API,FastAPI, JSON DB, MySQL/MariaDB,AWS)를 함께 경험하며
+          실제로 구현 가능한 범위와 난이도를 판단할 수 있는 수준의 개발 이해도를 갖추게 되었습니다.
+        </p>
+      </div>
+
+      <div class="role-card">
+        <div class="role-card-top">
+          <h3>기획/PM 역량</h3>
+          <span class="role-badge">80%</span>
+        </div>
+        <div class="role-meter"><div class="role-meter-fill" style="--pct:80;"></div></div>
+        <p>
+          사용자 인터뷰와 설문(총 39명)을 통해 페인포인트를 도출하고, 이를 기반으로 개선 방향을 정립한 경험이 있습니다.
+          페르소나와 유저 여정 맵 작성, IA 및 기능 정의, 스토리보드 설계, Figma를 활용한 프로토타입 구현, WBS 및 일정 관리,
+          지표 설계까지 서비스 기획의 전 과정을 한 사이클 이상 경험했습니다.
+          특히 지니봇 프로젝트에서 휴가 신청 시간을 132초에서 52초로, 자료 탐색 시간을 97초에서 45초로 줄이는
+          정량적인 성과를 만들어 낸 경험이 강점입니다.
+        </p>
+      </div>
+
+      <div class="role-card">
+        <div class="role-card-top">
+          <h3>UI/UX 디자인 역량</h3>
+          <span class="role-badge">70%</span>
+        </div>
+        <div class="role-meter"><div class="role-meter-fill" style="--pct:70;"></div></div>
+        <p>
+          Figma를 활용해 웹과 앱 환경을 모두 고려한 UI/UX 설계를 수행해 왔습니다.
+          기획 단계에서 정의한 IA, 화면 플로우, 요구사항을 Figma 상의 컴포넌트 구조와 화면으로 자연스럽게 옮기며 설계할 수 있습니다.
+          디자인과 색상 체계를 컴포넌트 단위로 정리해 재사용성과 일관성을 높이는 방식을 선호하며,
+          모바일, 태블릿, PC를 고려한 반응형 레이아웃과 기본적인 접근성(미디어쿼리,시맨틱 구조, 명도 대비 등)을 함께 신경 씁니다.
+          기획에 사용된 UI 흐름을 Figma에 최대한 그대로 반영해, 기획 의도가 화면 단계에서 왜곡되지 않도록 구현하는 것을
+          중요한 강점이자 목표로 삼고 있습니다.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -369,14 +576,6 @@
     </div>
   </section>
 
-  <section id="capability" class="container reveal">
-    <h2>직무 역량</h2>
-    <div class="grid cols-2">
-      <div class="card"><h3>기술 역량</h3><p>HTML/CSS/JS·React 경험, VSCode·Git 협업에 익숙합니다.</p></div>
-      <div class="card"><h3>PM/기획 역량</h3><p>Figma 프로토타입을 코드로 검증하고 일정·리스크를 고려한 우선순위를 제시합니다.</p></div>
-    </div>
-  </section>
-
   <section id="personality" class="container reveal">
     <h2>성격의 장·단점</h2>
     <div class="grid cols-2">
@@ -414,7 +613,7 @@
   <script>
     // ===== 공통: 테마/언어/스크롤 등 =====
     const sectionOrderPresets={
-      default:['about','skills','programs','strengths','projects','growth','capability','personality','contact'],
+      default:['about','skills','programs','strengths','capability','projects','growth','personality','contact'],
       hire:['projects','skills','strengths','capability','about','programs','growth','personality','contact']
     };
     function applyOrder(preset){
@@ -455,7 +654,14 @@
     applyOrder(localStorage.getItem('portfolio.order')||'default');
     applyLang(localStorage.getItem('portfolio.lang')||'ko');
 
-    const io=new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); } }); },{threshold:.12});
+    const io=new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.classList.add('on');
+          io.unobserve(e.target);
+        }
+      });
+    },{threshold:.12});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
     document.getElementById('y').textContent=new Date().getFullYear();
   </script>
@@ -487,7 +693,10 @@
     lb.addEventListener('click',(e)=>{ if(e.target===lb) closeLightbox(); });
     lb.querySelector('.close').addEventListener('click',closeLightbox);
     window.addEventListener('keydown',(e)=>{ if(!lb.classList.contains('open'))return;
-      if(e.key==='Escape') closeLightbox(); if(e.key==='ArrowLeft') lbPrev.click(); if(e.key==='ArrowRight') lbNext.click(); });
+      if(e.key==='Escape') closeLightbox();
+      if(e.key==='ArrowLeft') lbPrev.click();
+      if(e.key==='ArrowRight') lbNext.click();
+    });
   </script>
 
   <!-- ===== Carousel: 픽셀 단위 이동 + DOMContentLoaded 보장 ===== -->
@@ -501,7 +710,7 @@
 
       function slideTo(idx){
         i=idx;
-        const w=el.clientWidth;                     // 패널 너비 픽셀 기준
+        const w=el.clientWidth;
         track.style.transform=`translateX(-${i*w}px)`;
         dotsWrap.querySelectorAll('.dot').forEach((d,idx)=>d.classList.toggle('on', idx===i));
         if(cap) cap.textContent=imgs[i].dataset.caption||'';
@@ -517,14 +726,12 @@
       el.addEventListener('mouseleave',()=>timer=setInterval(()=>slideTo((i+1)%n),3500));
 
       imgs.forEach((im,idx)=>im.addEventListener('click',()=>openLightbox(imgs,idx)));
-      // 리사이즈 시 위치 보정
       window.addEventListener('resize',()=>slideTo(i));
       slideTo(0);
     }
 
     document.addEventListener('DOMContentLoaded',()=>{
       document.querySelectorAll('.carousel').forEach(initCarousel);
-      // 타이핑 시작 (라이트박스/캐러셀 정의 이후)
       startTyping(i18n[localStorage.getItem('portfolio.lang')||'ko'].headerLines);
     });
   </script>
