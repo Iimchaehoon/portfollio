@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <style>
     :root{
       --bg:#f7f9fc;
@@ -27,7 +28,7 @@
       color:var(--text);
       background:linear-gradient(180deg,#f9fafb 0%,#f3f6ff 55%,#e5edff 100%);
       overflow-x:hidden;
-      padding-top:64px; /* 고정 네비게이션 영역 확보 */
+      padding-top:64px;
     }
     a{color:inherit;text-decoration:none}
     .container{width:min(1200px, 92vw);margin-inline:auto}
@@ -40,6 +41,11 @@
       border-radius:999px;
       font-size:.9rem
     }
+
+    /* ✅ 기본 리스트 스타일 (디자인 영향 최소) */
+    .list{margin:.6rem 0 0; padding-left:1.1rem}
+    .list li{margin:.25rem 0; color:#374151; line-height:1.6}
+
     nav{
       position:fixed;
       top:0;left:0;right:0;
@@ -63,14 +69,8 @@
       font-size:.9rem;
       transition:background .2s ease, color .2s ease, transform .15s ease;
     }
-    nav a:hover{
-      background:#e5edff;
-      transform:translateY(-1px);
-    }
-    nav a.active{
-      background:#1d4ed8;
-      color:#f9fafb;
-    }
+    nav a:hover{background:#e5edff;transform:translateY(-1px);}
+    nav a.active{background:#1d4ed8;color:#f9fafb;}
     .badge{
       border:1px solid var(--line);
       background:#ffffff;
@@ -81,7 +81,6 @@
       box-shadow:0 1px 3px rgba(15,23,42,.06);
     }
 
-    /* hero */
     .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:center;padding:4.5rem 0 3.5rem}
     .title{font-size:clamp(28px,4.6vw,58px);line-height:1.08;margin:0 0 .6rem;font-weight:900;letter-spacing:-.02em}
     .subtitle{color:#4b5563;margin:.3rem 0 1.5rem;font-size:1.05rem}
@@ -103,39 +102,25 @@
     .hero-card p{margin:0;color:#111827;font-weight:600;letter-spacing:.01em}
     .cta{display:flex;gap:.75rem;margin-top:1rem}
     .btn{
-      display:inline-flex;
-      align-items:center;
-      gap:.5rem;
-      padding:.75rem 1rem;
-      border-radius:12px;
+      display:inline-flex;align-items:center;gap:.5rem;
+      padding:.75rem 1rem;border-radius:12px;
       border:1px solid var(--line);
-      font-weight:700;
-      font-size:.92rem;
-      background:#ffffff;
-      color:#0f172a;
-      cursor:pointer;
+      font-weight:700;font-size:.92rem;
+      background:#ffffff;color:#0f172a;cursor:pointer;
       transition:transform .15s ease, box-shadow .2s ease, background .2s ease;
-      position:relative;
-      overflow:hidden;
+      position:relative;overflow:hidden;
     }
     .btn.primary{
       background:linear-gradient(90deg,var(--brand),var(--brand-2));
-      border:0;
-      color:#f9fafb;
-      box-shadow:0 10px 24px rgba(37,99,235,.35);
+      border:0;color:#f9fafb;box-shadow:0 10px 24px rgba(37,99,235,.35);
     }
-    .btn:hover{
-      transform:translateY(-1.5px);
-      box-shadow:0 10px 20px rgba(15,23,42,.12);
-    }
+    .btn:hover{transform:translateY(-1.5px);box-shadow:0 10px 20px rgba(15,23,42,.12);}
     .kicker{display:flex;align-items:center;gap:.6rem;margin:1rem 0 .6rem;font-weight:700;color:#2563eb}
 
-    /* section */
     section{padding:4rem 0;border-top:1px solid var(--line)}
     section h2{font-size:clamp(22px,3.2vw,36px);margin:0 0 .6rem}
     section p.lead{color:#4b5563;margin:.2rem 0 1.2rem;font-size:.96rem}
 
-    /* grid */
     .grid{display:grid;gap:1rem}
     .cols-3{grid-template-columns:repeat(3,1fr)}
     .cols-2{grid-template-columns:repeat(2,1fr)}
@@ -160,14 +145,9 @@
       transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
     }
     .card h3{margin:.25rem 0 .75rem}
-    .card:hover{
-      transform:translateY(-3px);
-      box-shadow:0 18px 40px rgba(15,23,42,.06);
-      border-color:#d4d9ff;
-    }
+    .card:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(15,23,42,.06);border-color:#d4d9ff;}
     .meta{display:flex;gap:.6rem;flex-wrap:wrap;color:#6b7280;font-size:.9rem}
 
-    /* skills - 카테고리 카드형 그리드 */
     .skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:1.2rem}
     @media (max-width:980px){.skills{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media (max-width:560px){.skills{grid-template-columns:1fr}}
@@ -175,9 +155,7 @@
     .skills-inner{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}
     @media (max-width:560px){.skills-inner{grid-template-columns:1fr}}
     .skill{
-      display:flex;
-      align-items:center;
-      gap:.75rem;
+      display:flex;align-items:center;gap:.75rem;
       padding:.7rem .8rem;
       border:1px solid var(--line);
       background:#f9fafb;
@@ -193,19 +171,16 @@
     .skill b{font-weight:600}
     .skill img{width:28px;height:28px;object-fit:contain;background:transparent}
 
-    /* 직무 역량 카드 섹션 */
     .role-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem;margin-top:1.4rem}
     @media (max-width:860px){.role-grid{grid-template-columns:1fr}}
     .role-card{
-      position:relative;
-      overflow:hidden;
+      position:relative;overflow:hidden;
       background:linear-gradient(135deg,#ffffff,#f3f6ff);
       border:1px solid #e0e7ff;
       border-radius:20px;
       padding:1.3rem 1.4rem 1.4rem;
       box-shadow:0 18px 40px rgba(15,23,42,.08);
-      opacity:0;
-      transform:translateY(10px);
+      opacity:0;transform:translateY(10px);
       transition:opacity .55s ease, transform .55s ease, box-shadow .35s ease, border-color .35s ease, background .35s ease;
     }
     .reveal.on .role-card{opacity:1;transform:none}
@@ -217,68 +192,30 @@
     }
     .role-card::before{
       content:"";
-      position:absolute;
-      inset:-20%;
+      position:absolute;inset:-20%;
       background:radial-gradient(circle at 0 0,rgba(129,140,248,.22),transparent 55%);
-      opacity:0;
-      transform:translate3d(-10px,-10px,0);
+      opacity:0;transform:translate3d(-10px,-10px,0);
       transition:opacity .35s ease, transform .35s ease;
       pointer-events:none;
     }
-    .role-card:hover::before{
-      opacity:1;
-      transform:translate3d(0,0,0);
-    }
-    .role-card-top{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:.75rem;
-      margin-bottom:.35rem;
-    }
-    .role-card-top h3{
-      margin:0;
-      font-size:1.05rem;
-      letter-spacing:-.01em;
-    }
+    .role-card:hover::before{opacity:1;transform:translate3d(0,0,0);}
+    .role-card-top{display:flex;align-items:center;justify-content:space-between;gap:.75rem;margin-bottom:.35rem;}
+    .role-card-top h3{margin:0;font-size:1.05rem;letter-spacing:-.01em;}
     .role-badge{
-      padding:.25rem .6rem;
-      border-radius:999px;
+      padding:.25rem .6rem;border-radius:999px;
       border:1px solid rgba(148,163,199,.6);
-      font-size:.8rem;
-      color:#111827;
-      background:#eef2ff;
-      white-space:nowrap;
+      font-size:.8rem;color:#111827;background:#eef2ff;white-space:nowrap;
     }
-    .role-meter{
-      position:relative;
-      height:6px;
-      border-radius:999px;
-      background:rgba(148,163,199,.25);
-      overflow:hidden;
-      margin:.5rem 0 1rem;
-    }
+    .role-meter{position:relative;height:6px;border-radius:999px;background:rgba(148,163,199,.25);overflow:hidden;margin:.5rem 0 1rem;}
     .role-meter-fill{
-      position:absolute;
-      inset:0;
-      width:0;
+      position:absolute;inset:0;width:0;
       background:linear-gradient(90deg,var(--brand),var(--brand-2));
       box-shadow:0 0 10px rgba(37,99,235,.55);
       transition:width .9s cubic-bezier(.22,.61,.36,1);
     }
-    .reveal.on .role-card .role-meter-fill{
-      width:calc(var(--pct,0)*1%);
-    }
-    .role-card p{
-      position:relative;
-      margin:0;
-      color:#374151;
-      font-size:.95rem;
-      line-height:1.6;
-      z-index:1;
-    }
+    .reveal.on .role-card .role-meter-fill{width:calc(var(--pct,0)*1%);}
+    .role-card p{position:relative;margin:0;color:#374151;font-size:.95rem;line-height:1.6;z-index:1;}
 
-    /* 성과 시각화 */
     .perf-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:1.3rem}
     @media (max-width:980px){.perf-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media (max-width:640px){.perf-grid{grid-template-columns:1fr}}
@@ -286,18 +223,9 @@
     .perf-card small{color:#6b7280;font-size:.8rem}
     .bar-chart{margin-top:.7rem;display:grid;gap:.45rem}
     .bar-row{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:.45rem;font-size:.85rem;color:#4b5563}
-    .bar-track{
-      position:relative;
-      height:8px;
-      border-radius:999px;
-      background:#e5e7eb;
-      overflow:hidden;
-    }
+    .bar-track{position:relative;height:8px;border-radius:999px;background:#e5e7eb;overflow:hidden;}
     .bar-fill{
-      position:absolute;
-      inset:0;
-      width:0;
-      border-radius:inherit;
+      position:absolute;inset:0;width:0;border-radius:inherit;
       background:linear-gradient(90deg,var(--brand),var(--brand-2));
       box-shadow:0 0 8px rgba(37,99,235,.45);
       transition:width .9s cubic-bezier(.22,.61,.36,1);
@@ -305,7 +233,6 @@
     .reveal.on .bar-fill{width:calc(var(--val,0)*1%);}
     .bar-label{font-variant-numeric:tabular-nums;}
 
-    /* 프로젝트 섹션 & 타임라인 */
     .project{
       display:grid;
       grid-template-columns:1fr .9fr;
@@ -315,13 +242,18 @@
     }
     @media (max-width:980px){.project{grid-template-columns:1fr}}
     .project:hover{transform:translateY(-2px)}
+
+    /* ✅✅✅ 여기만 수정: 캐러셀 세로 여백 제거(다른 디자인/기능 영향 최소) */
     .project .thumb{
       border:1px solid var(--line);
       border-radius:16px;
       overflow:hidden;
-      min-height:220px;
+      min-height:360px;          /* 기존 220px → 360px로 맞춰 여백 방지 */
       background:linear-gradient(135deg,#eff3ff,#e0e7ff);
+      display:flex;              /* 내부 캐러셀이 100% 높이를 먹도록 */
     }
+    /* ✅✅✅ 여기만 수정 끝 */
+
     .tag{
       background:#eef2ff;
       color:#4338ca;
@@ -331,7 +263,6 @@
       font-size:.85rem;
     }
 
-    /* footer & effects */
     footer{padding:3rem 0;color:#6b7280;text-align:center}
     .reveal{opacity:0;transform:translateY(12px);transition:opacity .7s ease, transform .7s ease}
     .reveal.on{opacity:1;transform:none}
@@ -339,14 +270,26 @@
     .avatar-out{display:flex;justify-content:center;margin-bottom:.75rem}
     .hero-card img, .hero-card figure, .hero-card .avatar-card{display:none!important}
 
-    /* carousel */
-    .carousel{position:relative;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#000}
-    .carousel .track{display:flex;transition:transform .4s ease}
-    .carousel img{width:100%;max-height:360px;object-fit:cover;display:block;cursor:zoom-in}
+    .carousel{
+      position:relative;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#000;
+      width:100%;
+      height:100%;               /* ✅ thumb 높이를 꽉 채움 */
+    }
+    .carousel .track{
+      display:flex;
+      transition:transform .4s ease;
+      height:100%;               /* ✅ */
+    }
+    .carousel img{
+      width:100%;
+      height:100%;               /* ✅ */
+      max-height:none;           /* ✅ 기존 max-height:360px 제거(세로 여백 원인) */
+      object-fit:cover;
+      display:block;
+      cursor:zoom-in
+    }
     .carousel .ctrl{
-      position:absolute;
-      top:50%;
-      transform:translateY(-50%);
+      position:absolute;top:50%;transform:translateY(-50%);
       background:rgba(255,255,255,.85);
       border:1px solid var(--line);
       backdrop-filter:blur(6px);
@@ -360,19 +303,15 @@
     .carousel .dot{width:8px;height:8px;border-radius:50%;background:#e5e7eb;border:1px solid #9ca3af}
     .carousel .dot.on{background:#f97316;border-color:#ea580c}
     .carousel .caption{
-      position:absolute;
-      left:0;right:0;bottom:2rem;
-      text-align:center;
-      color:#f9fafb;
+      position:absolute;left:0;right:0;bottom:2rem;
+      text-align:center;color:#f9fafb;
       text-shadow:0 2px 8px rgba(0,0,0,.6);
       font-weight:600;
     }
     .carousel .dot{position:relative}
     .carousel .dot::after{
       content:attr(data-title);
-      position:absolute;
-      bottom:130%;
-      left:50%;
+      position:absolute;bottom:130%;left:50%;
       transform:translateX(-50%);
       white-space:nowrap;
       background:rgba(17,24,39,.92);
@@ -386,7 +325,6 @@
       transition:opacity .15s ease;
     }
 
-    /* lightbox */
     .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;z-index:80}
     .lightbox.open{display:flex}
     .lightbox .inner{max-width:92vw;max-height:86vh;position:relative}
@@ -406,6 +344,20 @@
 
     /* EDUO(=kmooc) 캡션만 검은색 */
     .carousel[data-carousel="kmooc"] .caption { color:#000; text-shadow:none; }
+
+    /* ✅ (요청 3) LEVEL-UP 캡션: 검정 글씨 + 가독성 배경 */
+    .carousel[data-carousel="levelup"] .caption{
+      color:#000;
+      text-shadow:none;
+      background:rgba(255,255,255,.78);
+      display:inline-block;
+      left:50%;
+      right:auto;
+      transform:translateX(-50%);
+      padding:.25rem .6rem;
+      border-radius:10px;
+      border:1px solid rgba(226,232,240,.9);
+    }
   </style>
 
   <style>
@@ -429,9 +381,14 @@
     .btn .ripple{position:absolute;border-radius:50%;transform:scale(0);animation:ripple .6s ease-out;background:rgba(255,255,255,.5)}
     @keyframes ripple{to{transform:scale(8);opacity:0}}
   </style>
-  <link rel="icon" type="image/png" href="images/favicon.png"/>
+
+  <!-- ✅ 파비콘: P.png -->
+  <link rel="icon" type="image/png" href="images/P.png"/>
+  <link rel="apple-touch-icon" href="images/P.png"/>
+
   <meta property="og:image" content="images/og.png"/>
 </head>
+
 <body>
   <nav>
     <div class="container bar">
@@ -510,7 +467,7 @@
     <h2>보유 기술 및 도구</h2>
     <p class="lead">HTML · CSS · JavaScript · React(경험) · Notion · Figma · GitHub · ChatGPT · VSCode · <b>AWS</b> · <b>Google Workspace</b> · <b>MySQL</b> · <b>Slack</b></p>
     <div class="skills" aria-label="skills icons grid">
-      <!-- Cooperation -->
+
       <div class="card skill-category">
         <h3>Cooperation</h3>
         <div class="skills-inner">
@@ -520,7 +477,6 @@
         </div>
       </div>
 
-      <!-- Design -->
       <div class="card skill-category">
         <h3>Design</h3>
         <div class="skills-inner">
@@ -528,7 +484,6 @@
         </div>
       </div>
 
-      <!-- Web -->
       <div class="card skill-category">
         <h3>Web</h3>
         <div class="skills-inner">
@@ -539,7 +494,6 @@
         </div>
       </div>
 
-      <!-- Database -->
       <div class="card skill-category">
         <h3>Database</h3>
         <div class="skills-inner">
@@ -547,7 +501,6 @@
         </div>
       </div>
 
-      <!-- Git -->
       <div class="card skill-category">
         <h3>Git</h3>
         <div class="skills-inner">
@@ -555,17 +508,16 @@
         </div>
       </div>
 
-      <!-- AI Tools -->
       <div class="card skill-category">
         <h3>AI Tools</h3>
         <div class="skills-inner">
           <div class="skill"><img src="images/chatgpt.png" alt="ChatGPT"/><b>ChatGPT</b></div>
           <div class="skill"><img src="images/claude.png" alt="Claude"/><b>Claude</b></div>
           <div class="skill"><img src="images/cursor.png" alt="Cursor"/><b>Cursor</b></div>
+          <div class="skill"><img src="images/make.png" alt="Figma Make"/><b>Figma Make</b></div>
         </div>
       </div>
 
-      <!-- Cloud -->
       <div class="card skill-category">
         <h3>Cloud</h3>
         <div class="skills-inner">
@@ -573,7 +525,6 @@
         </div>
       </div>
 
-      <!-- Develope Tools -->
       <div class="card skill-category">
         <h3>Develope Tools</h3>
         <div class="skills-inner">
@@ -581,6 +532,7 @@
           <div class="skill"><img src="images/android.png" alt="Android Studio"/><b>Android Studio</b></div>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -608,7 +560,6 @@
     </div>
   </section>
 
-  <!-- 새 직무 역량 섹션 (핵심역량과 프로젝트 사이) -->
   <section id="capability" class="container reveal">
     <h2>직무 역량</h2>
     <div class="role-grid">
@@ -633,7 +584,7 @@
         <div class="role-meter"><div class="role-meter-fill" style="--pct:75;"></div></div>
         <p>
           HTML, CSS, JavaScript, React(경험)를 바탕으로 화면 설계, 컴포넌트 구조 설계, 간단한 MVP 구현이 가능합니다.
-          지니봇, EDUO, Bookly 프로젝트에서 프론트엔드와 일부 백엔드(Chat GPT API,FastAPI, JSON DB, MySQL/MariaDB,AWS)를 함께 경험하며
+          지니봇, EDUO 프로젝트에서 프론트엔드와 일부 백엔드(Chat GPT API,FastAPI, JSON DB, MySQL/MariaDB,AWS)를 함께 경험하며
           실제로 구현 가능한 범위와 난이도를 판단할 수 있는 수준의 개발 이해도를 갖추게 되었습니다.
         </p>
       </div>
@@ -662,10 +613,7 @@
         <p>
           Figma를 활용해 웹과 앱 환경을 모두 고려한 UI/UX 설계를 수행해 왔습니다.
           기획 단계에서 정의한 IA, 화면 플로우, 요구사항을 Figma 상의 컴포넌트 구조와 화면으로 자연스럽게 옮기며 설계할 수 있습니다.
-          디자인과 색상 체계를 컴포넌트 단위로 정리해 재사용성과 일관성을 높이는 방식을 선호하며,
           모바일, 태블릿, PC를 고려한 반응형 레이아웃과 기본적인 접근성(미디어쿼리,시맨틱 구조, 명도 대비 등)을 함께 신경 씁니다.
-          기획에 사용된 UI 흐름을 Figma에 최대한 그대로 반영해, 기획 의도가 화면 단계에서 왜곡되지 않도록 구현하는 것을
-          중요한 강점이자 목표로 삼고 있습니다.
         </p>
       </div>
     </div>
@@ -674,7 +622,6 @@
   <section id="projects" class="container reveal">
     <h2>프로젝트</h2>
 
-    <!-- 1: 지니봇 (맨 위로) -->
     <article class="project card">
       <div class="copy">
         <div class="meta">
@@ -715,7 +662,6 @@
       </div>
     </article>
 
-    <!-- 2: EDUO -->
     <article class="project card" style="margin-top:1rem">
       <div class="copy">
         <div class="meta">
@@ -745,32 +691,42 @@
       </div>
     </article>
 
-    <!-- 3: 북클리 -->
     <article class="project card" style="margin-top:1rem">
       <div class="copy">
         <div class="meta">
-          <span class="tag">팀 5명 · 1개월</span>
-          <span class="tag">기여도 30%</span>
-          <span class="tag">서비스 기획 · IA/Flow · 기능정의 · 와이어프레임 · UI · 프로토타입 · 테스트</span>
+          <span class="tag">팀 4명 · 4주</span>
+          <span class="tag">기여도 35%</span>
+          <span class="tag">서비스 기획 · IA/Flow · 기능정의 · 프로토타입 · WBS · 프론트엔드</span>
+          <span class="tag">AI 어시스턴트 · 개인 맞춤 코스 추천 · 관리자(Admin)</span>
         </div>
-        <h3 style="margin:.5rem 0">북클리(Bookly) — 함께 읽는 즐거움: AI 추천 · 독서 미러링 · 독서 골든벨</h3>
-        <p>초등 고학년의 문해력 위기를 ‘함께 읽기’ 경험으로 해결하기 위한 소셜 독서 앱을 기획했습니다.</p>
+        <h3 style="margin:.5rem 0">LEVEL-UP — 강사 실무 맞춤 AI 교육 강의 추천 플랫폼 (User + Admin)</h3>
+        <p>
+          강사(입시/테크/직업훈련)의 실무 과업(자료 제작·업무 자동화·수업 설계)에 맞춰,
+          <b>설문 기반으로 개인 맞춤 강의/코스를 추천</b>하는 웹 서비스입니다.
+          사용자 영역(추천·탐색·수강)과 운영자 영역(강의 승인/제재·주문/환불·공지/FAQ)을 분리해
+          <b>서비스 운영까지 고려한 구조</b>로 설계했습니다.
+        </p>
         <ul class="list">
-          <li>Agile 기반 6주 프로세스</li>
-          <li>핵심 기능: 함께읽기, 퀴즈+보상, 대화형 AI 도우미</li>
-          <li>기대효과: 또래 상호작용과 긍정 피드백</li>
+          <li><b>MVP1: 개인 맞춤 코스 추천</b> — 6문항 설문 → 상위 카테고리 태깅 → 메타데이터 유사도 비교 → 문항별 가중치 → 점수 계산 → 추천 리스트 제공</li>
+          <li><b>MVP2: 강사 실무 맞춤 AI 교육 플랫폼</b> — 강사 유형별 추천 코스 + 검색/필터 + 강의 상세/태그 기반 탐색</li>
+          <li><b>관리자 페이지</b> — 강의 콘텐츠 승인/제재, 주문·결제 현황 대시보드, 환불/사용자 관리, 공지/FAQ·이벤트 관리</li>
+          <li><b>검증(정량)</b> — 강사 대상 설문(총 39명) 기반으로 문제/수요를 정의했고, 응답 중 <b>AI 활용 경험 75%</b>, <b>플랫폼 사용 의향 67%</b>를 근거로 MVP 방향을 고도화했습니다.</li>
         </ul>
         <div class="cta">
-          <a class="btn soft" target="_blank" rel="noopener" href="./portfile/독서앱기획.pdf">📄 북클리 기획서(PDF)</a>
+          <a class="btn primary" target="_blank" rel="noopener" href="https://level-up-sepia-eight.vercel.app/">개발 Web서비스 보기</a>
+          <a class="btn soft" target="_blank" rel="noopener" href="https://levelup-swart.vercel.app/">관리자(Admin) 페이지 보기</a>
+
+          <!-- ✅ (요청 1) 실제 파일명: TalkFile_LEVEL-UP.pdf -->
+          <a class="btn soft" target="_blank" rel="noopener" href="./portfile/TalkFile_LEVEL-UP.pdf.pdf">📄 LEVEL-UP 기획서(PDF)</a>
         </div>
       </div>
+
       <div class="thumb">
-        <div class="carousel" data-carousel="bookly">
+        <div class="carousel" data-carousel="levelup">
           <div class="track">
-            <img src="images/스크린샷_19-10-2025_194845_.jpeg" alt="Bookly 커버" data-caption="프로젝트 커버"/>
-            <img src="images/스크린샷_19-10-2025_194913_.jpeg" alt="Bookly Q&A" data-caption="AI 추천 Q&A"/>
-            <img src="images/스크린샷_19-10-2025_194923_.jpeg" alt="Bookly 미러링" data-caption="독서 미러링"/>
-            <img src="images/스크린샷_19-10-2025_194932_.jpeg" alt="Bookly 골든벨" data-caption="독서 골든벨"/>
+            <img src="images/img1.png" alt="LEVEL-UP MVP1" data-caption="MVP1 · 설문 기반 개인 맞춤 코스 추천 플로우"/>
+            <img src="images/img2.png" alt="LEVEL-UP MVP2" data-caption="MVP2 · 강사 실무 맞춤 AI 교육 플랫폼(추천/탐색)"/>
+            <img src="images/img3.png" alt="LEVEL-UP 관리자" data-caption="Admin · 승인/제재 · 주문/결제 · 환불/사용자 · 공지/FAQ 관리"/>
           </div>
           <div class="caption" aria-live="polite"></div>
           <button class="ctrl prev" aria-label="이전">◂</button>
@@ -781,41 +737,33 @@
     </article>
   </section>
 
-  <!-- 새 성과 시각화 섹션 -->
   <section id="results" class="container reveal">
     <h2>성과</h2>
     <p class="lead">프로젝트를 통해 실제로 만들어 낸 변화와, 서비스 기획 관점에서 설정한 기대 효과를 정리했습니다.</p>
     <div class="perf-grid">
+
       <div class="card perf-card">
         <h3>지니봇 · 업무 프로세스 시간 단축</h3>
         <small>기존 프로세스 대비 챗봇 도입 후 처리 시간 변화</small>
         <div class="bar-chart">
           <div class="bar-row">
             <span>휴가 신청</span>
-            <div class="bar-track">
-              <div class="bar-fill" style="--val:100;"></div>
-            </div>
+            <div class="bar-track"><div class="bar-fill" style="--val:100;"></div></div>
             <span class="bar-label">132초</span>
           </div>
           <div class="bar-row">
             <span>챗봇 적용</span>
-            <div class="bar-track">
-              <div class="bar-fill" style="--val:40;"></div>
-            </div>
+            <div class="bar-track"><div class="bar-fill" style="--val:40;"></div></div>
             <span class="bar-label">52초</span>
           </div>
           <div class="bar-row">
             <span>자료 탐색</span>
-            <div class="bar-track">
-              <div class="bar-fill" style="--val:100;"></div>
-            </div>
+            <div class="bar-track"><div class="bar-fill" style="--val:100;"></div></div>
             <span class="bar-label">97초</span>
           </div>
           <div class="bar-row">
             <span>챗봇 적용</span>
-            <div class="bar-track">
-              <div class="bar-fill" style="--val:46;"></div>
-            </div>
+            <div class="bar-track"><div class="bar-fill" style="--val:46;"></div></div>
             <span class="bar-label">45초</span>
           </div>
         </div>
@@ -827,59 +775,47 @@
         <div class="bar-chart">
           <div class="bar-row">
             <span>완주율</span>
-            <div class="bar-track">
-              <div class="bar-fill" style="--val:45;"></div>
-            </div>
+            <div class="bar-track"><div class="bar-fill" style="--val:45;"></div></div>
             <span class="bar-label">50%</span>
           </div>
           <div class="bar-row">
             <span>강의이해도</span>
-            <div class="bar-track">
-              <div class="bar-fill" style="--val:70;"></div>
-            </div>
+            <div class="bar-track"><div class="bar-fill" style="--val:70;"></div></div>
             <span class="bar-label">70%</span>
           </div>
           <div class="bar-row">
             <span>재수강 의향</span>
-            <div class="bar-track">
-              <div class="bar-fill" style="--val:75;"></div>
-            </div>
+            <div class="bar-track"><div class="bar-fill" style="--val:75;"></div></div>
             <span class="bar-label">향상 기대</span>
           </div>
         </div>
       </div>
 
       <div class="card perf-card">
-        <h3>Bookly · 독서 참여 경험 강화</h3>
-        <small>아이들의 독서 참여와 상호작용 경험을 높이기 위한 기획 가설</small>
+        <h3>LEVEL-UP · 강사 설문 기반 MVP 타당성 지표</h3>
+        <small>강사(총 39명) 설문 결과를 근거로 문제/수요를 정의하고 MVP를 설계</small>
         <div class="bar-chart">
           <div class="bar-row">
-            <span>개인 독서</span>
-            <div class="bar-track">
-              <div class="bar-fill" style="--val:55;"></div>
-            </div>
-            <span class="bar-label">60%</span>
+            <span>AI 활용 경험</span>
+            <div class="bar-track"><div class="bar-fill" style="--val:75;"></div></div>
+            <span class="bar-label">75%</span>
           </div>
           <div class="bar-row">
-            <span>함께 읽기 · 미러링</span>
-            <div class="bar-track">
-              <div class="bar-fill" style="--val:85;"></div>
-            </div>
-            <span class="bar-label">80%</span>
+            <span>플랫폼 사용 의향</span>
+            <div class="bar-track"><div class="bar-fill" style="--val:67;"></div></div>
+            <span class="bar-label">67%</span>
           </div>
           <div class="bar-row">
-            <span>퀴즈 · 보상 시스템</span>
-            <div class="bar-track">
-              <div class="bar-fill" style="--val:80;"></div>
-            </div>
-            <span class="bar-label">재참여 의향↑</span>
+            <span>개인 맞춤 추천 가치</span>
+            <div class="bar-track"><div class="bar-fill" style="--val:80;"></div></div>
+            <span class="bar-label">가설 검증</span>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- 새 프로젝트 회고 섹션 -->
   <section id="retrospective" class="container reveal">
     <h2>프로젝트 회고</h2>
     <p class="lead">각 프로젝트를 통해 얻은 인사이트와, 다음 프로젝트에서 더 잘하고 싶은 포인트를 정리했습니다.</p>
@@ -901,11 +837,12 @@
         </p>
       </div>
       <div class="card">
-        <h3>Bookly</h3>
+        <h3>LEVEL-UP</h3>
         <p>
-          아이들을 위한 서비스에서는 복잡한 기능보다 <b>즉각적인 피드백과 재미</b>가 핵심이라는 점을 느꼈습니다.
-          보호자·교사·아이 세 주체의 요구가 다르기 때문에,
-          누구를 1순위 사용자로 둘지 명확히 정하는 것이 기획의 출발점이라는 것을 배웠습니다.
+          추천 기능은 “알고리즘”만이 아니라 <b>데이터 수집(설문)–가중치–결과 제시(리스트/탐색)</b>까지
+          <b>엔드투엔드 경험</b>으로 설계되어야 한다는 것을 배웠습니다.
+          또한 <b>User 화면</b>만이 아니라 <b>Admin(승인/제재·정산·환불·공지/FAQ)</b>까지 포함해야
+          실제 서비스 운영이 가능하다는 관점을 갖게 되었습니다.
         </p>
       </div>
     </div>
@@ -934,7 +871,6 @@
   </footer>
 
   <script>
-    // ===== 공통: 테마/언어/스크롤 등 =====
     const sectionOrderPresets={
       default:['about','skills','programs','strengths','capability','projects','results','retrospective','contact'],
       hire:['projects','skills','strengths','capability','about','programs','results','retrospective','contact']
@@ -1038,7 +974,6 @@
     document.getElementById('y').textContent=new Date().getFullYear();
   </script>
 
-  <!-- ===== Lightbox: 먼저 선언 ===== -->
   <script>
     const lb=document.createElement('div');
     lb.id='lightbox';
@@ -1093,7 +1028,6 @@
     });
   </script>
 
-  <!-- ===== Carousel: 픽셀 단위 이동 + DOMContentLoaded 보장 ===== -->
   <script>
     function initCarousel(el){
       const track=el.querySelector('.track');
