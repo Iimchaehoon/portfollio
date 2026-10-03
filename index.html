@@ -435,6 +435,11 @@
       margin-top:1.2rem;
     }
 
+    .career-wrap p,.career-automation li{
+      word-break:keep-all;
+      overflow-wrap:break-word;
+    }
+
     .career-logo-box{
       display:flex;
       align-items:center;
@@ -515,12 +520,11 @@
     .hero-evidence img{display:block;width:100%;height:auto}
     .hero-evidence figcaption{padding:.65rem .75rem;font-size:.8rem;font-weight:700;color:#475569}
     .hero-evidence a:focus-visible{outline:3px solid var(--brand);outline-offset:-3px}
-    .career-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.6rem;margin-top:1rem}
-    .career-metrics div{padding:.85rem .65rem;border:1px solid #c7d2fe;border-radius:14px;background:#eef2ff}
-    .career-metrics strong{display:block;font-size:1.45rem;color:#1d4ed8}
-    .career-metrics span{display:block;margin-top:.3rem;font-size:.8rem;line-height:1.5;color:#475569}
+    .career-sentence{display:block}
+    .career-sentence + .career-sentence{margin-top:.4rem}
+    .career-duties .career-qa-results{margin-top:.65rem;padding:.75rem;border-radius:10px;background:#eef2ff;color:#1d4ed8;font-size:.85rem}
     .jetplay-career .career-metric-note{margin:.65rem 0 0;font-size:.75rem;color:#64748b}
-    .career-automation{margin-top:1rem}
+    .career-automation{margin-top:0}
     .career-automation h4{margin:0 0 .75rem;font-size:1rem}
     .career-automation ul{display:grid;gap:.7rem;list-style:none;margin:0;padding:0}
     .career-automation li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:1rem;font-size:.9rem;line-height:1.6}
@@ -531,8 +535,6 @@
       .hero-gallery-grid{grid-template-columns:1fr}
       .career-audiences b{display:block;margin-bottom:.1rem}
       .career-automation li{grid-template-columns:1fr;gap:.1rem}
-      .career-metrics{gap:.4rem}
-      .career-metrics strong{font-size:1.25rem}
     }
 
     .flow-line{
@@ -1157,16 +1159,16 @@
             <span class="tag">UI/UX 기획</span>
             <span class="tag">콘텐츠 기획</span>
             <span class="tag">LMS 운영 · QA</span>
+            <span class="tag">CS 문의 대응</span>
             <span class="tag">AI · 업무 자동화</span>
           </div>
 
           <h4 class="career-label">담당 서비스</h4>
           <h4 class="career-service-title">히어로챌린지 — AI 성장·바른 자세 교실</h4>
           <p class="career-service-copy">
-            <b>AI 모션인식 기반 자세 분석과 AR 미니게임</b>을 결합한 방과 후 교육 서비스입니다.
-            학생은 요가 동작과 신체 활동에 참여하고, 학부모는 앱에서 수업 사진과 자세 측정 결과,
-            키·체중 등 성장 기록을 확인합니다. <b>수업 앱·수업관리 시스템(LMS)·학부모 앱</b>이 연결되어
-            수업 준비부터 활동 결과 확인까지 하나의 흐름으로 이어집니다.
+            <span class="career-sentence"><b>AI 모션인식 기반 자세 분석과 AR 미니게임</b>을 결합한 방과 후 교육 서비스입니다.</span>
+            <span class="career-sentence">학생은 요가 동작과 신체 활동에 참여하고, 학부모는 앱에서 수업 사진과 자세 측정 결과, 키·체중 등 성장 기록을 확인합니다.</span>
+            <span class="career-sentence"><b>수업 앱·수업관리 시스템(LMS)·학부모 앱</b>이 연결되어 수업 준비부터 활동 결과 확인까지 하나의 흐름으로 이어집니다.</span>
           </p>
 
           <div class="career-audiences">
@@ -1183,15 +1185,30 @@
             </li>
             <li>
               <h5>교육 콘텐츠 기획 · 관리</h5>
-              <p>교육 콘텐츠와 리소스를 기획·관리하고, 소개 자료와 영상 콘텐츠를 제작했습니다. 교육박람회·키즈 인공지능 서밋에서 서비스 소개와 콘텐츠 체험 부스를 운영했습니다.</p>
+              <p>
+                <span class="career-sentence">교육 콘텐츠와 리소스를 기획·관리하고, 소개 자료와 영상 콘텐츠를 제작했습니다.</span>
+                <span class="career-sentence">교육박람회·키즈 인공지능 서밋에서 서비스 소개와 콘텐츠 체험 부스를 운영했습니다.</span>
+              </p>
             </li>
             <li>
-              <h5>LMS 운영 · QA 테스트</h5>
-              <p>앱 기능과 수업 데이터를 점검했습니다. 학생 명단·조편성·출결·점수·사진을 교차 검수하고, 운영 예외와 실제 오류를 구분해 개발팀에 보고했습니다.</p>
+              <h5>LMS 운영 · QA 및 모니터링 자동화</h5>
+              <p>
+                <span class="career-sentence"><b>AI 에이전트가 LMS 모니터링부터 분석·보고까지 수행하는 자동화 프로세스</b>를 구축했습니다.</span>
+                <span class="career-sentence">Codex 에이전트가 학생 명단·조편성·출결·점수·사진을 교차 점검하고, 분석 결과를 Slack 소통채널에 업로드하도록 구성했습니다.</span>
+                <span class="career-sentence">반복적인 화면 점검과 보고를 에이전트에 맡기고, 운영 기준·예외 규칙을 보완하며 결과 검수와 오탐·미탐 교정을 담당했습니다.</span>
+              </p>
+              <p class="career-qa-results"><b>모니터링 보고 47일 · 자동점검 보고 24회 · 누적 304개 반 점검</b></p>
+              <p class="career-metric-note">
+                <span class="career-sentence">2026.07.06 ~ 09.23 보고 기록 기준이며, 보고 일수는 고유 날짜 기준입니다.</span>
+                <span class="career-sentence">자동점검은 08.06 ~ 09.23 집계로, 동일 반의 다른 회차 점검을 포함합니다.</span>
+              </p>
             </li>
             <li>
               <h5>CS 대응 · 운영 피드백 정리</h5>
-              <p>서비스 이용 문의와 수업 운영 문제에 대응했습니다. 실제 화면·데이터로 원인을 확인하고, AI로 답변 초안·처리 이력·FAQ·안내자료를 정리해 검토 후 활용했습니다.</p>
+              <p>
+                <span class="career-sentence">서비스 이용 문의와 수업 운영 문제에 대응했습니다.</span>
+                <span class="career-sentence">실제 화면·데이터로 원인을 확인하고, AI로 답변 초안·처리 이력·FAQ·안내자료를 정리해 검토 후 활용했습니다.</span>
+              </p>
             </li>
           </ul>
         </div>
@@ -1225,24 +1242,17 @@
             </figure>
           </div>
 
-          <div class="career-metrics" aria-label="운영 모니터링 실적">
-            <div><strong>47일</strong><span>모니터링 보고<br>고유 날짜 기준</span></div>
-            <div><strong>24회</strong><span>반 수가 명시된<br>자동점검 보고</span></div>
-            <div><strong>304개 반</strong><span>자동점검 누적<br>회차별 반 수 합계</span></div>
+          <div class="card career-automation">
+            <h4>AI 활용 · 업무 자동화</h4>
+            <ul>
+              <li><b>ChatGPT · Claude · Gemini</b><span>서비스 기획 및 개선 방향 구체화</span></li>
+              <li><b>Google Apps Script</b><span>리소스 관리 및 반복 업무 자동화</span></li>
+              <li><b>Codex 에이전트</b><span>서비스 점검, 데이터 검증 및 보고 자동화</span></li>
+              <li><b>CapCut</b><span>교육 콘텐츠 영상 편집</span></li>
+              <li><b>Figma · Figma Make · Canva</b><span>서비스 소개 및 발표자료 제작</span></li>
+            </ul>
           </div>
-          <p class="career-metric-note">2026.07.06 ~ 09.23 보고 기록 기준. 자동점검 집계는 08.06 ~ 09.23이며 동일 반의 다른 회차 점검을 포함합니다.</p>
         </div>
-      </div>
-
-      <div class="card career-automation">
-        <h4>AI 활용 · 업무 자동화</h4>
-        <ul>
-          <li><b>ChatGPT · Claude · Gemini</b><span>서비스 분석 및 개선 방향 정리</span></li>
-          <li><b>Google Apps Script</b><span>리소스 관리 및 반복 업무 자동화</span></li>
-          <li><b>Codex 에이전트</b><span>서비스 점검, 데이터 검증 및 보고 자동화</span></li>
-          <li><b>CapCut</b><span>교육 콘텐츠 영상 편집</span></li>
-          <li><b>Figma · Figma Make · Canva</b><span>서비스 소개 및 발표자료 제작</span></li>
-        </ul>
       </div>
     </article>
 
@@ -1265,9 +1275,8 @@
         </div>
 
         <p style="margin-top:1rem;line-height:1.7;color:#374151">
-          자이 아파트 입주민용 앱 <b>자이홈</b>의 커뮤니티 시설 관리 서비스(FMCS) 운영 기획을 담당했습니다.
-          입주민이 모바일 앱에서 시설을 예약하고, 현장 키오스크에서 발권 후 출입하는 흐름을
-          관리자 웹·모바일 앱·키오스크 환경 기준으로 점검했습니다.
+          <span class="career-sentence">자이 아파트 입주민용 앱 <b>자이홈</b>의 커뮤니티 시설 관리 서비스(FMCS) 운영 기획을 담당했습니다.</span>
+          <span class="career-sentence">입주민이 모바일 앱에서 시설을 예약하고, 현장 키오스크에서 발권 후 출입하는 흐름을 관리자 웹·모바일 앱·키오스크 환경 기준으로 점검했습니다.</span>
         </p>
 
         <div class="flow-line">
