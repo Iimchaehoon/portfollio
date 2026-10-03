@@ -465,6 +465,76 @@
       font-size:.92rem;
     }
 
+    .jetplay-career{
+      margin-top:1.5rem;
+      padding-top:1.5rem;
+      border-top:1px solid var(--line);
+    }
+
+    .jetplay-career .career-wrap{align-items:start}
+    .jetplay-career .career-wrap > *{min-width:0}
+    .jetplay-career .career-logo{max-height:none;height:64px}
+    .jetplay-career p{line-height:1.7;color:#374151}
+    .career-label{
+      margin:1.3rem 0 .5rem;
+      font-size:.85rem;
+      font-weight:800;
+      color:#2563eb;
+    }
+    .career-service-title{margin:.35rem 0;font-size:1.2rem}
+    .career-service-copy{margin:.5rem 0}
+    .career-audiences{
+      display:grid;
+      gap:.55rem;
+      margin:1rem 0;
+      padding:1rem;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:#f8fafc;
+    }
+    .career-audiences p{margin:0;font-size:.9rem}
+    .career-audiences b{display:inline-block;min-width:6.4rem;color:#0f172a}
+    .career-duties{list-style:none;padding:0;margin:.5rem 0 0}
+    .career-duties li{padding:.7rem 0;border-bottom:1px solid var(--line)}
+    .career-duties li:last-child{border-bottom:0;padding-bottom:0}
+    .career-duties h5{margin:0 0 .25rem;font-size:.95rem}
+    .career-duties p{margin:0;font-size:.9rem}
+    .hero-gallery{display:grid;gap:.75rem}
+    .hero-gallery-banner{display:block;width:100%;height:auto;border-radius:16px}
+    .hero-gallery-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}
+    .hero-evidence{
+      display:flex;
+      flex-direction:column;
+      margin:0;
+      border:1px solid var(--line);
+      border-radius:14px;
+      overflow:hidden;
+      background:#fff;
+    }
+    .hero-evidence a{display:flex;align-items:center;flex:1;background:#f8fafc}
+    .hero-evidence img{display:block;width:100%;height:auto}
+    .hero-evidence figcaption{padding:.65rem .75rem;font-size:.8rem;font-weight:700;color:#475569}
+    .hero-evidence a:focus-visible{outline:3px solid var(--brand);outline-offset:-3px}
+    .career-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.6rem;margin-top:1rem}
+    .career-metrics div{padding:.85rem .65rem;border:1px solid #c7d2fe;border-radius:14px;background:#eef2ff}
+    .career-metrics strong{display:block;font-size:1.45rem;color:#1d4ed8}
+    .career-metrics span{display:block;margin-top:.3rem;font-size:.8rem;line-height:1.5;color:#475569}
+    .jetplay-career .career-metric-note{margin:.65rem 0 0;font-size:.75rem;color:#64748b}
+    .career-automation{margin-top:1rem}
+    .career-automation h4{margin:0 0 .75rem;font-size:1rem}
+    .career-automation ul{display:grid;gap:.7rem;list-style:none;margin:0;padding:0}
+    .career-automation li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:1rem;font-size:.9rem;line-height:1.6}
+    .career-automation b{color:#1d4ed8}
+    .career-automation span{color:#374151}
+    @media(max-width:640px){
+      .jetplay-career .career-logo-box{align-items:flex-start;flex-wrap:wrap}
+      .hero-gallery-grid{grid-template-columns:1fr}
+      .career-audiences b{display:block;margin-bottom:.1rem}
+      .career-automation li{grid-template-columns:1fr;gap:.1rem}
+      .career-metrics{gap:.4rem}
+      .career-metrics strong{font-size:1.25rem}
+    }
+
     .flow-line{
       display:flex;
       flex-wrap:wrap;
@@ -1068,8 +1138,113 @@
   <section id="career" class="container reveal">
     <h2>경력</h2>
     <p class="lead">
-      실무 환경에서 관리자 웹, 모바일 앱, 키오스크 환경의 서비스 흐름을 점검하고 운영 기획을 수행했습니다.
+      주거·교육 서비스의 사용자 흐름을 분석하고, 서비스 기획부터 콘텐츠 관리, 운영 QA와 업무 자동화까지 수행했습니다.
     </p>
+
+    <article class="jetplay-career" aria-labelledby="jetplay-title">
+      <div class="career-wrap">
+        <div class="card">
+          <div class="career-logo-box">
+            <img class="career-logo" src="images/jetplaylogo.png" alt="제트플레이 로고" width="1200" height="630" loading="lazy">
+            <div>
+              <h3 class="career-title" id="jetplay-title">제트플레이 개발팀 · 팀장</h3>
+              <p class="career-sub">2026.07 ~ 2026.09 · 히어로챌린지 서비스 기획·운영</p>
+            </div>
+          </div>
+
+          <div class="meta">
+            <span class="tag">서비스·앱 기획</span>
+            <span class="tag">UI/UX 기획</span>
+            <span class="tag">콘텐츠 기획</span>
+            <span class="tag">LMS 운영 · QA</span>
+            <span class="tag">AI · 업무 자동화</span>
+          </div>
+
+          <h4 class="career-label">담당 서비스</h4>
+          <h4 class="career-service-title">히어로챌린지 — AI 성장·바른 자세 교실</h4>
+          <p class="career-service-copy">
+            <b>AI 모션인식 기반 자세 분석과 AR 미니게임</b>을 결합한 방과 후 교육 서비스입니다.
+            학생은 요가 동작과 신체 활동에 참여하고, 학부모는 앱에서 수업 사진과 자세 측정 결과,
+            키·체중 등 성장 기록을 확인합니다. <b>수업 앱·수업관리 시스템(LMS)·학부모 앱</b>이 연결되어
+            수업 준비부터 활동 결과 확인까지 하나의 흐름으로 이어집니다.
+          </p>
+
+          <div class="career-audiences">
+            <p><b>학생 · 수업 앱</b> 요가 학습, AR 게임 참여, 자세·신체 측정</p>
+            <p><b>강사 · LMS</b> 수업 준비, 학생·조편성·출결 및 활동 기록 관리</p>
+            <p><b>학부모 · 앱</b> 수업 결과, 활동 사진, 자녀의 성장 변화 확인</p>
+          </div>
+
+          <h4 class="career-label">내 역할과 담당 업무</h4>
+          <ul class="career-duties">
+            <li>
+              <h5>서비스 분석 · 개선 기획</h5>
+              <p>학생·학부모·강사의 이용 흐름을 분석하고, 개발자·디자이너와 요구사항·화면 구성·운영 이슈를 공유하며 개선 방향을 논의했습니다.</p>
+            </li>
+            <li>
+              <h5>교육 콘텐츠 기획 · 관리</h5>
+              <p>교육 콘텐츠와 리소스를 기획·관리하고, 소개 자료와 영상 콘텐츠를 제작했습니다. 교육박람회·키즈 인공지능 서밋에서 서비스 소개와 콘텐츠 체험 부스를 운영했습니다.</p>
+            </li>
+            <li>
+              <h5>LMS 운영 · QA 테스트</h5>
+              <p>앱 기능과 수업 데이터를 점검했습니다. 학생 명단·조편성·출결·점수·사진을 교차 검수하고, 운영 예외와 실제 오류를 구분해 개발팀에 보고했습니다.</p>
+            </li>
+            <li>
+              <h5>CS 대응 · 운영 피드백 정리</h5>
+              <p>서비스 이용 문의와 수업 운영 문제에 대응했습니다. 실제 화면·데이터로 원인을 확인하고, AI로 답변 초안·처리 이력·FAQ·안내자료를 정리해 검토 후 활용했습니다.</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="hero-gallery">
+          <img class="hero-gallery-banner" src="images/herologo.png" alt="AI 성장·바른 자세 교실 히어로챌린지" width="700" height="394" loading="lazy">
+          <div class="hero-gallery-grid">
+            <figure class="hero-evidence">
+              <a href="images/hero1.png" target="_blank" rel="noopener" aria-label="AI 자세 측정 소개 이미지 크게 보기">
+                <img src="images/hero1.png" alt="아이의 요가 동작을 AI 모션인식으로 분석하는 자세 측정 기능" width="855" height="761" loading="lazy">
+              </a>
+              <figcaption>AI 모션인식 · 요가 자세 측정</figcaption>
+            </figure>
+            <figure class="hero-evidence">
+              <a href="images/hero2.png" target="_blank" rel="noopener" aria-label="맞춤 피드백 및 성장 기록 소개 이미지 크게 보기">
+                <img src="images/hero2.png" alt="자세 분석, 실시간 측정 화면, 개인별 맞춤 피드백과 성장 기록" width="856" height="630" loading="lazy">
+              </a>
+              <figcaption>맞춤 피드백 · 성장 기록</figcaption>
+            </figure>
+            <figure class="hero-evidence">
+              <a href="images/hero3.png" target="_blank" rel="noopener" aria-label="AR 미니게임 소개 이미지 크게 보기">
+                <img src="images/hero3.png" alt="단체줄넘기, 푸드캐처, 청기백기, 바이러스 잡기 AR 미니게임" width="833" height="680" loading="lazy">
+              </a>
+              <figcaption>AR 미니게임 · 신체 활동 참여</figcaption>
+            </figure>
+            <figure class="hero-evidence">
+              <a href="images/hero4.png" target="_blank" rel="noopener" aria-label="학부모 앱 소개 이미지 크게 보기">
+                <img src="images/hero4.png" alt="학부모 앱에서 수업 사진과 월간 성장 리포트, 자세 변화를 확인하는 화면" width="924" height="467" loading="lazy">
+              </a>
+              <figcaption>학부모 앱 · 수업 결과 확인</figcaption>
+            </figure>
+          </div>
+
+          <div class="career-metrics" aria-label="운영 모니터링 실적">
+            <div><strong>47일</strong><span>모니터링 보고<br>고유 날짜 기준</span></div>
+            <div><strong>24회</strong><span>반 수가 명시된<br>자동점검 보고</span></div>
+            <div><strong>304개 반</strong><span>자동점검 누적<br>회차별 반 수 합계</span></div>
+          </div>
+          <p class="career-metric-note">2026.07.06 ~ 09.23 보고 기록 기준. 자동점검 집계는 08.06 ~ 09.23이며 동일 반의 다른 회차 점검을 포함합니다.</p>
+        </div>
+      </div>
+
+      <div class="card career-automation">
+        <h4>AI 활용 · 업무 자동화</h4>
+        <ul>
+          <li><b>ChatGPT · Claude · Gemini</b><span>서비스 분석 및 개선 방향 정리</span></li>
+          <li><b>Google Apps Script</b><span>리소스 관리 및 반복 업무 자동화</span></li>
+          <li><b>Codex 에이전트</b><span>서비스 점검, 데이터 검증 및 보고 자동화</span></li>
+          <li><b>CapCut</b><span>교육 콘텐츠 영상 편집</span></li>
+          <li><b>Figma · Figma Make · Canva</b><span>서비스 소개 및 발표자료 제작</span></li>
+        </ul>
+      </div>
+    </article>
 
     <div class="career-wrap">
       <div class="card">
