@@ -470,6 +470,19 @@
       font-size:.92rem;
     }
 
+    .career-company-heading{
+      margin:0;
+      font-size:clamp(22px,2.4vw,28px);
+      font-weight:800;
+      letter-spacing:-.02em;
+    }
+
+    .career-company + .career-company{
+      margin-top:clamp(3rem,6vw,4.5rem);
+      padding-top:2rem;
+      border-top:1px solid var(--line);
+    }
+
     .jetplay-career{
       margin-top:1.5rem;
       padding-top:1.5rem;
@@ -523,7 +536,6 @@
     .career-sentence{display:block}
     .career-sentence + .career-sentence{margin-top:.4rem}
     .career-duties .career-qa-results{margin-top:.65rem;padding:.75rem;border-radius:10px;background:#eef2ff;color:#1d4ed8;font-size:.85rem}
-    .jetplay-career .career-metric-note{margin:.65rem 0 0;font-size:.75rem;color:#64748b}
     .career-automation{margin-top:0}
     .career-automation h4{margin:0 0 .75rem;font-size:1rem}
     .career-automation ul{display:grid;gap:.7rem;list-style:none;margin:0;padding:0}
@@ -1143,7 +1155,8 @@
       주거·교육 서비스의 사용자 흐름을 분석하고, 서비스 기획부터 콘텐츠 관리, 운영 QA와 업무 자동화까지 수행했습니다.
     </p>
 
-    <article class="jetplay-career" aria-labelledby="jetplay-title">
+    <article class="career-company jetplay-career" aria-labelledby="jetplay-company-title">
+      <h3 class="career-company-heading" id="jetplay-company-title">제트플레이</h3>
       <div class="career-wrap">
         <div class="card">
           <div class="career-logo-box">
@@ -1198,10 +1211,6 @@
                 <span class="career-sentence">반복적인 화면 점검과 보고를 에이전트에 맡기고, 운영 기준·예외 규칙을 보완하며 결과 검수와 오탐·미탐 교정을 담당했습니다.</span>
               </p>
               <p class="career-qa-results"><b>모니터링 보고 47일 · 자동점검 보고 24회 · 누적 304개 반 점검</b></p>
-              <p class="career-metric-note">
-                <span class="career-sentence">2026.07.06 ~ 09.23 보고 기록 기준이며, 보고 일수는 고유 날짜 기준입니다.</span>
-                <span class="career-sentence">자동점검은 08.06 ~ 09.23 집계로, 동일 반의 다른 회차 점검을 포함합니다.</span>
-              </p>
             </li>
             <li>
               <h5>CS 대응 · 운영 피드백 정리</h5>
@@ -1256,58 +1265,61 @@
       </div>
     </article>
 
-    <div class="career-wrap">
-      <div class="card">
-        <div class="career-logo-box">
-          <img class="career-logo" src="images/dnilogo.png" alt="DNI 로고">
-          <div>
-            <h3 class="career-title">DNI UI/UX그룹 · 사원</h3>
-            <p class="career-sub">2026.02 ~ 2026.04 · 자이홈 FMCS 운영 기획</p>
+    <article class="career-company" aria-labelledby="dni-company-title">
+      <h3 class="career-company-heading" id="dni-company-title">디엔아이 (DNI)</h3>
+      <div class="career-wrap">
+        <div class="card">
+          <div class="career-logo-box">
+            <img class="career-logo" src="images/dnilogo.png" alt="DNI 로고">
+            <div>
+              <h3 class="career-title">DNI UI/UX그룹 · 사원</h3>
+              <p class="career-sub">2026.02 ~ 2026.04 · 자이홈 FMCS 운영 기획</p>
+            </div>
+          </div>
+
+          <div class="meta">
+            <span class="tag">서비스기획</span>
+            <span class="tag">UI/UX기획</span>
+            <span class="tag">앱기획</span>
+            <span class="tag">운영 테스트</span>
+            <span class="tag">Redmine 이슈관리</span>
+          </div>
+
+          <p style="margin-top:1rem;line-height:1.7;color:#374151">
+            <span class="career-sentence">자이 아파트 입주민용 앱 <b>자이홈</b>의 커뮤니티 시설 관리 서비스(FMCS) 운영 기획을 담당했습니다.</span>
+            <span class="career-sentence">입주민이 모바일 앱에서 시설을 예약하고, 현장 키오스크에서 발권 후 출입하는 흐름을 관리자 웹·모바일 앱·키오스크 환경 기준으로 점검했습니다.</span>
+          </p>
+
+          <div class="flow-line">
+            <span>시설</span><span>세부시설</span><span>이용권</span><span>예약</span><span>키오스크</span><span>출입기록</span>
+          </div>
+
+          <ul class="list">
+            <li>관리자 웹, 모바일 앱, 키오스크 환경의 예약·발권·출입 흐름 점검</li>
+            <li>운영/개발 서버 반영 테스트 및 기능 검증</li>
+            <li>Redmine 기반 요청사항, 수정사항, 배포 상태 관리</li>
+            <li>현장 점검 후 회의록 및 결과보고서 작성</li>
+          </ul>
+        </div>
+
+        <div class="career-images">
+          <div class="career-shot">
+            <img src="images/jaiapp.jpg" alt="자이홈 앱 소개 이미지">
+            <span class="career-cap">자이홈 앱</span>
+          </div>
+
+          <div class="career-shot logo-shot">
+            <img src="images/dnilogo.png" alt="DNI 로고 이미지">
+            <span class="career-cap">DNI</span>
+          </div>
+
+          <div class="career-shot wide">
+            <img src="images/jaihome.jpg" alt="자이홈 서비스 이미지">
+            <span class="career-cap">자이홈 프로젝트</span>
           </div>
         </div>
-
-        <div class="meta">
-          <span class="tag">서비스기획</span>
-          <span class="tag">UI/UX기획</span>
-          <span class="tag">앱기획</span>
-          <span class="tag">운영 테스트</span>
-          <span class="tag">Redmine 이슈관리</span>
-        </div>
-
-        <p style="margin-top:1rem;line-height:1.7;color:#374151">
-          <span class="career-sentence">자이 아파트 입주민용 앱 <b>자이홈</b>의 커뮤니티 시설 관리 서비스(FMCS) 운영 기획을 담당했습니다.</span>
-          <span class="career-sentence">입주민이 모바일 앱에서 시설을 예약하고, 현장 키오스크에서 발권 후 출입하는 흐름을 관리자 웹·모바일 앱·키오스크 환경 기준으로 점검했습니다.</span>
-        </p>
-
-        <div class="flow-line">
-          <span>시설</span><span>세부시설</span><span>이용권</span><span>예약</span><span>키오스크</span><span>출입기록</span>
-        </div>
-
-        <ul class="list">
-          <li>관리자 웹, 모바일 앱, 키오스크 환경의 예약·발권·출입 흐름 점검</li>
-          <li>운영/개발 서버 반영 테스트 및 기능 검증</li>
-          <li>Redmine 기반 요청사항, 수정사항, 배포 상태 관리</li>
-          <li>현장 점검 후 회의록 및 결과보고서 작성</li>
-        </ul>
       </div>
-
-      <div class="career-images">
-        <div class="career-shot">
-          <img src="images/jaiapp.jpg" alt="자이홈 앱 소개 이미지">
-          <span class="career-cap">자이홈 앱</span>
-        </div>
-
-        <div class="career-shot logo-shot">
-          <img src="images/dnilogo.png" alt="DNI 로고 이미지">
-          <span class="career-cap">DNI</span>
-        </div>
-
-        <div class="career-shot wide">
-          <img src="images/jaihome.jpg" alt="자이홈 서비스 이미지">
-          <span class="career-cap">자이홈 프로젝트</span>
-        </div>
-      </div>
-    </div>
+    </article>
   </section>
 
   <section id="strengths" class="container reveal">
